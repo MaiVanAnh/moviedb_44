@@ -11,9 +11,7 @@ class MovieAdapter : BaseAdapter<Movie>() {
 
     override fun layout(row: Int): Int = R.layout.item_movie
 
-    override fun viewHolder(
-        binding: ViewDataBinding): BaseViewHolder<Movie> = MovieAdapterViewHolder(
-        binding as ItemMovieBinding)
+    override fun viewHolder(binding: ViewDataBinding): BaseViewHolder<Movie> = MovieAdapterViewHolder(binding as ItemMovieBinding)
 
     companion object {
 

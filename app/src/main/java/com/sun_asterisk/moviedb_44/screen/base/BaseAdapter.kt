@@ -2,6 +2,7 @@ package com.sun_asterisk.moviedb_44.screen.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
@@ -44,7 +45,7 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
     protected abstract fun viewHolder(binding: ViewDataBinding): BaseViewHolder<T>
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T> {
+    override fun onCreateViewHolder(parent: ViewGroup, @LayoutRes viewType: Int): BaseViewHolder<T> {
         val binding =
             DataBindingUtil.inflate(LayoutInflater.from(parent.context), viewType, parent, false) as ViewDataBinding
         return viewHolder(binding)

@@ -31,7 +31,7 @@ data class Movie(
 
     fun getUrlBackDrop(): String = Constant.BASE_BACKDROP_PATH + backdropPath
 
-    fun getUrlPoster(): String = Constant.BASE_POSTER_PATH + backdropPath
+    fun getUrlPoster(): String = Constant.BASE_POSTER_PATH + posterPath
 
     fun getStringVoteCount(): String = voteCount.toString() + Constant.RATING
 }

@@ -1,6 +1,7 @@
 package com.sun_asterisk.moviedb_44.screen.home
 
 import androidx.databinding.ObservableField
+import com.sun_asterisk.moviedb_44.R
 import com.sun_asterisk.moviedb_44.data.model.Movie
 import com.sun_asterisk.moviedb_44.data.repository.MovieRepository
 import com.sun_asterisk.moviedb_44.screen.base.BaseViewModel

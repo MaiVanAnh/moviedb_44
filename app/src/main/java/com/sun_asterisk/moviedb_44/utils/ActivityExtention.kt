@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.sun_asterisk.moviedb_44.R
 
 fun AppCompatActivity.popBackStack() {
     hideKeyboard(this)
@@ -35,26 +34,31 @@ fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
 fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int, addToStack: Boolean) {
     supportFragmentManager.inTransaction {
         if (addToStack)
-            add(frameId, fragment, fragment.javaClass.simpleName).addToBackStack(fragment.javaClass.simpleName)
+            add(frameId, fragment, fragment.javaClass.simpleName)
+                .addToBackStack(fragment.javaClass.simpleName)
         else
             add(frameId, fragment)
     }
 }
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
-    supportFragmentManager.inTransaction { replace(frameId, fragment, fragment.javaClass.simpleName) }
+    supportFragmentManager.inTransaction {
+        replace(frameId, fragment, fragment.javaClass.simpleName)
+    }
 }
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int, addToStock: Boolean) {
     supportFragmentManager.inTransaction {
         if (addToStock)
-            replace(frameId, fragment, fragment.javaClass.simpleName).addToBackStack(fragment.javaClass.simpleName)
+            replace(frameId, fragment, fragment.javaClass.simpleName)
+                .addToBackStack(fragment.javaClass.simpleName)
         else
             replace(frameId, fragment, fragment.javaClass.simpleName)
     }
 }
 
-fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int, addToStack: Boolean, clearBackTask: Boolean) {
+fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int, addToStack: Boolean,
+    clearBackTask: Boolean) {
     supportFragmentManager.inTransaction {
         if (clearBackTask && supportFragmentManager.backStackEntryCount > 0) {
             val first = supportFragmentManager.getBackStackEntryAt(0)
@@ -74,7 +78,8 @@ fun AppCompatActivity.getCurrentFragment(): Fragment? {
     var fragmentTag: String? = ""
 
     if (fragmentManager.backStackEntryCount > 0) {
-        fragmentTag = fragmentManager.getBackStackEntryAt(fragmentManager.backStackEntryCount - 1).name
+        fragmentTag = fragmentManager.getBackStackEntryAt(
+            fragmentManager.backStackEntryCount - 1).name
     }
 
     return fragmentManager.findFragmentByTag(fragmentTag)

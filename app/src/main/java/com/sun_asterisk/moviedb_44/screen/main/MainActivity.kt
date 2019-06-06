@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private fun initViews() {
-        addFragment(HomeFragment(), R.id.container, true)
+        addFragment(HomeFragment(), R.id.container)
         navigation.setOnNavigationItemSelectedListener(this)
         val layoutParams = navigation.layoutParams as CoordinatorLayout.LayoutParams
         layoutParams.behavior = BottomNavigationBehavior()
